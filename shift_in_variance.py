@@ -8,9 +8,7 @@
 # ]
 # ///
 import numpy as np
-import pandas as pd
 from scipy.stats import f
-from typing import List, Tuple
 import matplotlib.pyplot as plt
 
 class ShiftInVariance:
@@ -33,7 +31,7 @@ class ShiftInVariance:
         self.sngHuber = huber_param
         self.intPointsBeforeEnd = points_before_end
 
-    def _huber_weighted_var(self, x: np.ndarray) -> Tuple[float, float, float]:
+    def _huber_weighted_var(self, x: np.ndarray) -> tuple[float, float, float]:
         """
         Calculates the weighted variance using Huber weighting.
 
@@ -131,7 +129,7 @@ class ShiftInVariance:
             return ss_down / sum_of_weights
         return 0.0
 
-    def detect_shifts(self, data: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def detect_shifts(self, data: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         Detects shifts in variance in the given time series.
 
