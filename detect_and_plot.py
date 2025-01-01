@@ -26,7 +26,6 @@ def main():
     args = parser.parse_args()
 
     # Read data from CSV
-    #todo: add error handling for reading csv file
     try:
         print(f"Attempting to read CSV file: {args.csv_file}")
         df = pd.read_csv(args.csv_file)
